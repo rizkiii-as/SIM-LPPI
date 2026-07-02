@@ -1,0 +1,384 @@
+/* mentor.css - Styling khusus untuk halaman Mentor */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins", "sans-serif";
+}
+
+/* BREADCRUMB */
+.breadcrumb-item a {
+  color: #0d28f5;
+  transition: color 0.3s ease;
+}
+.breadcrumb-item a:hover {
+  color: #0a1fb3;
+}
+
+/* TAB NAVIGATION ITEM */
+.mentor-tabs {
+  background: #f8f9fa;
+}
+.mentor-tabs .nav-link {
+  border: none;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  background: transparent;
+  white-space: nowrap;
+}
+.mentor-tabs .nav-link:hover {
+  background: #0d28f51a;
+  color: #0d28f5;
+}
+.mentor-tabs .nav-link.active {
+  background: white;
+  color: #0d28f5;
+  border-bottom: 3px solid #0d28f5;
+  font-weight: 600;
+}
+
+/* TAB NAVIGATION CONTENT */
+.mentor-tab-content {
+  min-height: 400px;
+}
+
+/* Info Cards */
+.info-section {
+  background: #f8f9fa;
+  border-left: 2px solid #0d28f5;
+  transition: all 0.3s ease;
+}
+.info-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px #6c757d1a;
+}
+.info-section h5 {
+  color: #0d28f5;
+}
+.info-card {
+  background: white;
+  border-left: 2px solid #0d28f5;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px #6c757d1a;
+}
+
+.syarat-list li {
+  background: #f8f9fa;
+  border: 2px solid #0d28f5;
+}
+.syarat-list li i {
+  color: #0d28f5;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* TAB PENDAFTARAN */
+.form-control,
+.form-select {
+  transition: all 0.3s ease;
+}
+
+.empty-state {
+  color: #6c757d;
+}
+.empty-state i {
+  font-size: 64px;
+}
+
+.table-responsive.table-container {
+  border: 1px solid #0d28f5;
+}
+.table-custom thead th {
+  padding: 16px;
+  border-bottom: 1px solid #0d28f5;
+}
+.table-custom tbody td {
+  padding: 16px;
+  vertical-align: middle;
+  border-bottom: 1px solid #0d28f5;
+}
+.table-custom tbody tr:last-child td {
+  border-bottom: none;
+}
+.table-custom tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+}
+
+.status-badge.success {
+  background: #d4edda;
+}
+
+.status-badge.warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.info {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+/* TAB STATUS SELEKSI */
+.timeline-seleksi {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  border: 3px solid #0d28f5;
+}
+.timeline-item.completed::before {
+  background: #28a745;
+}
+.timeline-item.failed::before {
+  background: #dc3545;
+}
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: -15.5px;
+  top: 20px;
+  width: 2px;
+  height: 100%;
+  background: #e0e0e0;
+}
+.timeline-item.completed::after {
+  background: #28a745;
+}
+.timeline-item:last-child::after {
+  display: none;
+}
+.timeline-content {
+  border: 2px solid #e0e0e0;
+}
+.timeline-content.completed {
+  border-color: #28a745;
+}
+.timeline-content.failed {
+  border-color: #dc3545;
+}
+
+.jadwal-card {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+/* TAB SERTIFIKAT */
+.certificate-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.certificate-card i {
+  font-size: 64px;
+}
+
+/* ============================================================
+   SESI MENTORING - Tambahan CSS
+   ============================================================ */
+
+/* Form Panel (Tambah/Edit Sesi & Konten) */
+.table-custom-mentor thead th {
+  padding: 16px 8px;
+  border-bottom: 1px solid #0d28f5;
+}
+
+.table-custom-mentor tbody td {
+  padding: 16px 8px;
+  vertical-align: middle;
+  border-bottom: 1px solid #0d28f5;
+}
+.table-custom-mentor tbody tr:last-child td {
+  border-bottom: none;
+}
+.table-custom-mentor tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.sm-form-panel {
+  background: #f0f4ff;
+  border: 2px dashed #0d28f5;
+  overflow: hidden;
+}
+
+/* Progress Sesi */
+.sm-progress-wrap {
+  background: #f8f9fa;
+  border: 1px solid #0d28f5;
+}
+
+/* Konten Item (Materi & Tugas) */
+.sm-konten-item {
+  border: 1.5px solid #e0e0e0;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+
+.sm-konten-item:hover {
+  box-shadow: 0 2px 10px rgba(13, 40, 245, 0.08);
+  border-color: #0d28f5;
+}
+
+.sm-konten-icon {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* Tipe Badge */
+
+.sm-tipe-file {
+  background: #e8eaf6;
+  color: #3949ab;
+}
+.sm-tipe-link {
+  background: #e0f7fa;
+  color: #00838f;
+}
+.sm-tipe-video {
+  background: #fce4ec;
+  color: #c62828;
+}
+.sm-tipe-text {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Text Preview */
+.sm-text-preview {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Rekap Presensi */
+.sm-rekap-wrap {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.sm-rekap-item {
+  flex: 1;
+  min-width: 90px;
+  text-align: center;
+  padding: 14px 10px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.sm-rekap-hadir {
+  background: #d4edda;
+  border-color: #28a745;
+}
+.sm-rekap-izin {
+  background: #fff3cd;
+  border-color: #ffc107;
+}
+.sm-rekap-alpha {
+  background: #f8d7da;
+  border-color: #dc3545;
+}
+
+.sm-rekap-count {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.sm-rekap-hadir .sm-rekap-count {
+  color: #155724;
+}
+.sm-rekap-izin .sm-rekap-count {
+  color: #856404;
+}
+.sm-rekap-alpha .sm-rekap-count {
+  color: #721c24;
+}
+
+.sm-rekap-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Feedback */
+.sm-feedback-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 16px;
+  border-left: 4px solid #0d28f5;
+}
+
+.sm-feedback-avatar {
+  color: #6c757d;
+  line-height: 1;
+}
+
+.sm-feedback-isi {
+  font-size: 0.92rem;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Modal sub-tabs ukuran kecil */
+#detailSesiTabs .nav-link {
+  font-size: 0.88rem;
+  padding: 8px 14px;
+}
+
+/* Responsive Sesi Mentoring */
+@media (max-width: 768px) {
+  .sm-form-panel-inner {
+    padding: 16px;
+  }
+  .sm-rekap-count {
+    font-size: 1.4rem;
+  }
+  #detailSesiTabs {
+    flex-wrap: wrap;
+  }
+  #detailSesiTabs .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  .sm-konten-item {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sm-rekap-item {
+    min-width: 70px;
+    padding: 10px 6px;
+  }
+  .sm-rekap-label {
+    font-size: 0.7rem;
+  }
+}

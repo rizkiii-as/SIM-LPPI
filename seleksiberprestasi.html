@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seleksi Berprestasi - SIM LPPI UMP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/seleksiberprestasi.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="top-header d-flex align-items-center fixed-top bg-white">
+      <div class="d-flex align-items-center justify-content-between w-100 mx-4">
+        <div class="d-flex align-items-center gap-2">
+          <button class="mobile-menu-btn d-flex d-md-none align-items-center justify-content-center border border-0 rounded-4" id="mobileMenuBtn">
+            <i class="bi bi-list fs-4 text-white"></i>
+          </button>
+          <h2 class="header-title fs-2 fw-bold text-black m-0">SIM LPPI</h2>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <h3 class="d-none d-md-inline fs-3 fw-medium text-black m-0">Universitas Muhammadiyah Purwokerto</h3>
+          <img src="/assets/img/LogoUMPnonbg.png" alt="Logo" class="header-logo" />
+        </div>
+      </div>
+    </header>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="toggle-btn" id="toggleBtn">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+
+      <div class="sidebar-content">
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="user-name">Rizki Abdilah Supriadi</div>
+          <div class="user-id">2003040065</div>
+        </div>
+
+        <!-- Menu -->
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item">
+            <i class="bi bi-grid-fill"></i>
+            <span class="menu-text">Dashboard</span>
+            <span class="menu-tooltip">Dashboard</span>
+          </a>
+
+          <!-- Mentoring with Dropdown -->
+          <div class="menu-group">
+            <a href="#" class="menu-item active" id="mentoringMenu">
+              <i class="bi bi-people-fill"></i>
+              <span class="menu-text">Mentoring</span>
+              <span class="menu-tooltip">Mentoring</span>
+              <i class="bi bi-chevron-down menu-arrow"></i>
+            </a>
+            <div class="submenu" id="mentoringSubmenu">
+              <a href="mentor.html" class="submenu-item">
+                <i class="bi bi-person-video2"></i>
+                <span>Mentor</span>
+                <span class="menu-tooltip">Mentor</span>
+              </a>
+              <a href="mentee.html" class="submenu-item active">
+                <i class="bi bi-person-badge"></i>
+                <span>Mentee</span>
+                <span class="menu-tooltip">Mentee</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="tba.html" class="menu-item">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <span class="menu-text">TBA</span>
+            <span class="menu-tooltip">TBA</span>
+          </a>
+          <a href="bibaq.html" class="menu-item">
+            <i class="bi bi-chat-square-dots-fill"></i>
+            <span class="menu-text">BIBAQ</span>
+            <span class="menu-tooltip">BIBAQ</span>
+          </a>
+          <a href="seleksiberprestasi.html" class="menu-item">
+            <i class="bi bi-trophy-fill"></i>
+            <span class="menu-text">Seleksi Berprestasi</span>
+            <span class="menu-tooltip">Seleksi Berprestasi</span>
+          </a>
+        </nav>
+
+        <!-- Bottom Menu -->
+        <div class="bottom-menu">
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span class="menu-text">Profil</span>
+            <span class="menu-tooltip">Profil</span>
+          </a>
+          <a href="#" class="menu-item">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="menu-text">Logout</span>
+            <span class="menu-tooltip">Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content p-4" id="mainContent">
+      <!-- BREADCRUMB -->
+      <nav aria-label="breadcrumb" class="bg-white px-3 py-2 mb-4 rounded-4 shadow-sm">
+        <ol class="breadcrumb m-auto">
+          <li class="breadcrumb-item"><a href="dashboard.html" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-6">Dashboard</a></li>
+          <li class="breadcrumb-item fs-6 text-black" aria-current="page">Seleksi Berprestasi</li>
+        </ol>
+      </nav>
+
+      <!-- PAGE HEADER -->
+      <div class="bg-white rounded-4 mb-4 p-4 shadow-sm">
+        <h3 class="fs-3 m-auto fw-semibold text-black"><i class="bi bi-trophy-fill fs-2 text-black text-center me-2"></i>Seleksi Mentor & Mentee Berprestasi</h3>
+      </div>
+
+      <!-- TAB NAVIGATION -->
+      <div class="shadow-sm rounded-4 bg-white overflow-hidden">
+        <!-- TAB NAVIGATION ITEM -->
+        <ul class="nav nav-tabs berprestasi-tabs d-flex flex-wrap" id="berprestasiTabs" role="tablist">
+          <!-- TAB INFORMASI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link active rounded-top-4 py-2 px-3"
+              id="informasi-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#informasi"
+              type="button"
+              role="tab"
+              aria-controls="informasi"
+              aria-selected="true">
+              <i class="bi bi-info-circle me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Informasi</span>
+            </button>
+          </li>
+
+          <!-- TAB KELOMPOK -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="pendaftaran-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#pendaftaran"
+              type="button"
+              role="tab"
+              aria-controls="pendaftaran"
+              aria-selected="false">
+              <i class="bi bi-pencil-square me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Pendaftaran</span>
+            </button>
+          </li>
+
+          <!-- TAB STATUS SELEKSI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="status-seleksi-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#status-seleksi"
+              type="button"
+              role="tab"
+              aria-controls="status-seleksi"
+              aria-selected="false">
+              <i class="bi bi-clipboard-check me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Seleksi</span>
+            </button>
+          </li>
+
+          <!-- TAB PEMENANG -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button class="nav-link rounded-top-4 py-2 px-3" id="pemenang-tab" data-bs-toggle="tab" data-bs-target="#pemenang" type="button" role="tab" aria-controls="pemenang" aria-selected="false">
+              <i class="bi bi-trophy me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Pemenang</span>
+            </button>
+          </li>
+
+          <!-- TAB HASIL -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="sertifikat-berprestasi-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#sertifikat-berprestasi"
+              type="button"
+              role="tab"
+              aria-controls="sertifikat-berprestasi"
+              aria-selected="false">
+              <i class="bi bi-award me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Sertifikat</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- TAB NAVIGATION CONTENT -->
+        <div class="tab-content berprestasi-tab-content p-0" id="berprestasiTabContent">
+          <!-- TAB INFORMASI -->
+          <div class="tab-pane fade show active" id="informasi" role="tabpanel" aria-labelledby="informasi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-info-circle-fill text-black fs-4 me-2"></i>Informasi Program Seleksi Berprestasi</h4>
+
+              <!-- TENTANG SELEKSI BERPRESTASI -->
+              <div class="info-section p-3 mb-3 rounded-4">
+                <h5 class="fs-5 fw-semibold mb-2"><i class="bi bi-bookmark-fill me-2 fs-5"></i>Tentang Program</h5>
+                <p class="m-0 fs-6 fw-normal text-black">
+                  Program Seleksi Mentor dan Mentee Berprestasi merupakan kegiatan yang diselenggarakan untuk memilih tiga mentor terbaik dan tiga mentee terbaik dari mahasiswa yang telah
+                  menyelesaikan Program Tes Baca Al-Qur'an (TBA) serta Program Mentoring. Peserta yang meraih peringkat pertama akan memperoleh kesempatan mengikuti program pengembangan dan kegiatan
+                  di Malaysia atau Singapura.
+                </p>
+              </div>
+
+              <!-- KATEGORI -->
+              <h5 class="fs-5 fw-semibold text-black mb-2"><i class="bi bi-grid-3x3-gap-fill me-2 fs-5"></i>Kategori Seleksi</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="info-card p-3 rounded-4">
+                    <h6 class="text-primary fs-6 fw-semibold mb-2"><i class="bi bi-trophy-fill me-2 fs-6"></i>Mentor Berprestasi</h6>
+                    <p class="m-0 fs-6 fw-normal text-black"><strong>Jumlah Pemenang:</strong> 3 orang</p>
+                    <p class="m-0 fs-6 fw-normal text-black"><strong>Hadiah:</strong> Pemenang urutan 1 akan diberangkatkan ke Malaysia/Singapura</p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="info-card p-3 rounded-4">
+                    <h6 class="text-primary fs-6 fw-semibold mb-2"><i class="bi bi-trophy-fill me-2 fs-6"></i>Mentee Berprestasi</h6>
+                    <p class="m-0 fs-6 fw-normal text-black"><strong>Jumlah Pemenang:</strong> 3 orang</p>
+                    <p class="m-0 fs-6 fw-normal text-black"><strong>Hadiah:</strong> Pemenang urutan 1 akan diberangkatkan ke Malaysia/Singapura</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SYARAT DAN KETENTUAN -->
+              <div>
+                <h5 class="fs-5 fw-semibold text-black mb-2"><i class="bi bi-list-check me-2 fs-5"></i>Syarat & Ketentuan Pendaftaran</h5>
+                <ul class="syarat-list list-unstyled m-0 p-0">
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i><span>Mentor & Mentee aktif di tahun akademik sebelumnya</span>
+                  </li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i><span>Aktif di organisasi internal kampus dan ortom</span>
+                  </li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black"><i class="bi bi-check-circle-fill me-2 fs-6"></i><span>Bahasa Inggris aktif</span></li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i><span>Nilai akademik (IPK): Mentor minimal 2.80, Mentee minimal 2.75 + Presensi kehadiran mentoring 75%</span>
+                  </li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i><span>Rekomendasi: Mentor dari pembina mentor, Mentee dari Mentor kelompok</span>
+                  </li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i>Syarat pendukung: Transkrip Nilai, Sertifikat Syahadah, Sertifikat Mentoring Menjadi Mentee, Sertifikat Mentor, Sertifikat Specta
+                    dan Great, Rekomendasi
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PENDAFTARAN -->
+          <div class="tab-pane fade" id="pendaftaran" role="tabpanel" aria-labelledby="pendaftaran-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-pencil-square text-black me-2 fs-4"></i>Pendaftaran Program Seleksi Berprestasi</h4>
+
+              <!-- TOMBOL PENDAFTARAN -->
+              <div id="berprestasiRegistrationButtonArea" class="text-start mb-2">
+                <button id="btnDaftarBerprestasi" class="btn btn-primary fs-6 fw-normal px-3 py-2">Daftar Sekarang</button>
+              </div>
+
+              <!-- AREA STATUS PENDAFTARAN -->
+              <div id="berprestasiRegistrationStatusArea" class="rounded-4">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+
+              <!-- FORM PENDAFTARAN (Hidden by default) -->
+              <div id="formBerprestasiPendaftaranArea" style="display: none" class="mb-4">
+                <!-- Form akan dirender oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB STATUS SELEKSI -->
+          <div class="tab-pane fade" id="status-seleksi" role="tabpanel" aria-labelledby="status-seleksi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-clipboard-check-fill text-black me-2 fs-4"></i>Timeline Status Seleksi</h4>
+              <div id="statusSeleksiContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PEMENANG -->
+          <div class="tab-pane fade" id="pemenang" role="tabpanel" aria-labelledby="pemenang-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-trophy-fill text-black me-2 fs-4"></i>Daftar Pemenang Seleksi Berprestasi</h4>
+              <div id="pemenangContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB HASIL -->
+          <div class="tab-pane fade" id="sertifikat-berprestasi" role="tabpanel" aria-labelledby="sertifikat-berprestasi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-award-fill text-black me-2 fs-4"></i>Sertifikat Program Seleksi Berprestasi</h4>
+              <div id="sertifikatBerprestasiContent">
+                <!-- Akan diisi oleh Javascript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

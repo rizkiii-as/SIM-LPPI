@@ -1,0 +1,162 @@
+/* tba.css - Styling khusus untuk halaman TBA */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins", "sans-serif";
+}
+
+/* BREADCRUMB */
+.breadcrumb-item a {
+  color: #0d28f5;
+  transition: color 0.3s ease;
+}
+.breadcrumb-item a:hover {
+  color: #0a1fb3;
+}
+
+/* TAB NAVIGATION ITEM */
+.tba-tabs {
+  background: #f8f9fa;
+}
+.tba-tabs .nav-link {
+  border: none;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  background: transparent;
+  white-space: nowrap;
+}
+.tba-tabs .nav-link:hover {
+  background: #0d28f51a;
+  color: #0d28f5;
+}
+.tba-tabs .nav-link.active {
+  background: white;
+  color: #0d28f5;
+  border-bottom: 3px solid #0d28f5;
+  font-weight: 600;
+}
+
+/* TAB NAVIGATION CONTENT */
+.tba-tab-content {
+  min-height: 400px;
+}
+
+/* TAB INFORMASI */
+.info-section {
+  background: #f8f9fa;
+  border-left: 4px solid #0d28f5;
+  transition: all 0.3s ease;
+}
+.info-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px #6c757d1a;
+}
+.info-section h5 {
+  color: #0d28f5;
+}
+.info-card {
+  background: #f8f9fa;
+  border-left: 2px solid #0d28f5;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px #6c757d1a;
+}
+
+.penilaian-card {
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.penilaian-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px #6c757d1a;
+}
+.penilaian-card.lulus {
+  border-left: 2px solid #28a745;
+}
+.penilaian-card.tidak-lulus {
+  border-left: 2px solid #dc3545;
+}
+.penilaian-card ul li {
+  font-size: 16px;
+  color: #000000;
+}
+
+.syarat-list li {
+  background: #f8f9fa;
+  border: 2px solid #0d28f5;
+}
+.syarat-list li i {
+  color: #0d28f5;
+}
+
+/* TAB PENDAFTARAN */
+.form-control,
+.form-select {
+  transition: all 0.3s ease;
+}
+
+.empty-state {
+  color: #6c757d;
+}
+.empty-state i {
+  font-size: 64px;
+}
+
+.table-responsive.table-container {
+  border: 1px solid #0d28f5;
+}
+.table-custom thead th {
+  padding: 16px;
+  border-bottom: 1px solid #0d28f5;
+}
+.table-custom tbody td {
+  padding: 16px;
+  vertical-align: middle;
+  border-bottom: 1px solid #0d28f5;
+}
+.table-custom tbody tr:last-child td {
+  border-bottom: none;
+}
+.table-custom tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.status-badge {
+  display: inline-block;
+}
+.status-badge.success {
+  background: #d4edda;
+}
+.status-badge.warning {
+  background: #fff3cd;
+  color: #856404;
+}
+.status-badge.danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+.status-badge.info {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+/* TAB PENGUJI DAN JADWAL */
+.penguji-card {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+.jadwal-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 100%;
+}
+
+/* TAB HASIL */
+.certificate-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.certificate-card i {
+  font-size: 64px;
+}

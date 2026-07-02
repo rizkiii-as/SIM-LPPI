@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIBAQ - SIM LPPI UMP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/bibaq.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="top-header d-flex align-items-center fixed-top bg-white">
+      <div class="d-flex align-items-center justify-content-between w-100 mx-4">
+        <div class="d-flex align-items-center gap-2">
+          <button class="mobile-menu-btn d-flex d-md-none align-items-center justify-content-center border border-0 rounded-4" id="mobileMenuBtn">
+            <i class="bi bi-list fs-4 text-white"></i>
+          </button>
+          <h2 class="header-title fs-2 fw-bold text-black m-0">SIM LPPI</h2>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <h3 class="d-none d-md-inline fs-3 fw-medium text-black m-0">Universitas Muhammadiyah Purwokerto</h3>
+          <img src="/assets/img/LogoUMPnonbg.png" alt="Logo" class="header-logo" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="toggle-btn" id="toggleBtn">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+
+      <div class="sidebar-content">
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="user-name">Rizki Abdilah Supriadi</div>
+          <div class="user-id">2003040065</div>
+        </div>
+
+        <!-- Menu -->
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item">
+            <i class="bi bi-grid-fill"></i>
+            <span class="menu-text">Dashboard</span>
+            <span class="menu-tooltip">Dashboard</span>
+          </a>
+
+          <!-- Mentoring with Dropdown -->
+          <div class="menu-group">
+            <a href="#" class="menu-item active" id="mentoringMenu">
+              <i class="bi bi-people-fill"></i>
+              <span class="menu-text">Mentoring</span>
+              <span class="menu-tooltip">Mentoring</span>
+              <i class="bi bi-chevron-down menu-arrow"></i>
+            </a>
+            <div class="submenu" id="mentoringSubmenu">
+              <a href="mentor.html" class="submenu-item">
+                <i class="bi bi-person-video2"></i>
+                <span>Mentor</span>
+                <span class="menu-tooltip">Mentor</span>
+              </a>
+              <a href="mentee.html" class="submenu-item active">
+                <i class="bi bi-person-badge"></i>
+                <span>Mentee</span>
+                <span class="menu-tooltip">Mentee</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="tba.html" class="menu-item">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <span class="menu-text">TBA</span>
+            <span class="menu-tooltip">TBA</span>
+          </a>
+          <a href="bibaq.html" class="menu-item">
+            <i class="bi bi-chat-square-dots-fill"></i>
+            <span class="menu-text">BIBAQ</span>
+            <span class="menu-tooltip">BIBAQ</span>
+          </a>
+          <a href="seleksiberprestasi.html" class="menu-item">
+            <i class="bi bi-trophy-fill"></i>
+            <span class="menu-text">Seleksi Berprestasi</span>
+            <span class="menu-tooltip">Seleksi Berprestasi</span>
+          </a>
+        </nav>
+
+        <!-- Bottom Menu -->
+        <div class="bottom-menu">
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span class="menu-text">Profil</span>
+            <span class="menu-tooltip">Profil</span>
+          </a>
+          <a href="#" class="menu-item">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="menu-text">Logout</span>
+            <span class="menu-tooltip">Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content p-4" id="mainContent">
+      <!-- BREADCRUMB -->
+      <nav aria-label="breadcrumb" class="bg-white px-3 py-2 mb-4 rounded-4 shadow-sm">
+        <ol class="breadcrumb m-auto">
+          <li class="breadcrumb-item"><a href="dashboard.html" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-6">Dashboard</a></li>
+          <li class="breadcrumb-item fs-6 text-black" aria-current="page">BIBAQ</li>
+        </ol>
+      </nav>
+
+      <!-- PAGE HEADER -->
+      <div class="bg-white rounded-4 mb-4 p-4 shadow-sm">
+        <h3 class="fs-3 m-auto fw-semibold text-black"><i class="bi bi-chat-square-dots-fill fs-2 text-black text-center me-2"></i>Program Bimbingan Baca Al-Quran (BIBAQ)</h3>
+      </div>
+
+      <!-- TAB NAVIGATION -->
+      <div class="shadow-sm rounded-4 bg-white overflow-hidden">
+        <!-- TAB NAVIGATION ITEM -->
+        <ul class="nav nav-tabs bibaq-tabs d-flex flex-wrap" id="bibaqTabs" role="tablist">
+          <!-- TAB INFORMASI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link active rounded-top-4 py-2 px-3"
+              id="informasi-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#informasi"
+              type="button"
+              role="tab"
+              aria-controls="informasi"
+              aria-selected="true">
+              <i class="bi bi-info-circle me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Informasi</span>
+            </button>
+          </li>
+
+          <!-- TAB PENDAFTARAN -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="pendaftaran-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#pendaftaran"
+              type="button"
+              role="tab"
+              aria-controls="pendaftaran"
+              aria-selected="false">
+              <i class="bi bi-pencil-square me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Pendaftaran</span>
+            </button>
+          </li>
+
+          <!-- TAB PEMBIMBING DAN KELOMPOK -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="pembimbing-kelompok-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#pembimbing-kelompok"
+              type="button"
+              role="tab"
+              aria-controls="pembimbing-kelompok"
+              aria-selected="false">
+              <i class="bi bi-people me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Pembimbing & Kelompok</span>
+            </button>
+          </li>
+
+          <!-- TAB PRESENSI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button class="nav-link rounded-top-4 py-2 px-3" id="presensi-tab" data-bs-toggle="tab" data-bs-target="#presensi" type="button" role="tab" aria-controls="presensi" aria-selected="false">
+              <i class="bi bi-calendar-check me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Presensi</span>
+            </button>
+          </li>
+
+          <!-- TAB HASIL -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="memo-bibaq-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#memo-bibaq"
+              type="button"
+              role="tab"
+              aria-controls="memo-bibaq"
+              aria-selected="false">
+              <i class="bi bi-file-earmark-text me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Memo</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- TAB NAVIGATION CONTENT -->
+        <div class="tab-content bibaq-tab-content" id="bibaqTabContent">
+          <!-- TAB INFORMASI -->
+          <div class="tab-pane fade show active" id="informasi" role="tabpanel" aria-labelledby="informasi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-info-circle-fill text-black fs-4 me-2"></i>Informasi Program BIBAQ</h4>
+              <!-- TENTANG BIBAQ -->
+              <div class="info-section p-3 mb-3 rounded-4">
+                <h5 class="fs-5 fw-semibold mb-2"><i class="bi bi-bookmark-fill me-2 fs-5"></i>Tentang Program BIBAQ</h5>
+                <p class="m-0 fs-6 fw-normal text-black">
+                  Program Bimbingan Baca Al-Qur'an (BIBAQ) merupakan program pembinaan yang wajib diikuti oleh mahasiswa yang belum memenuhi standar kelulusan Tes Baca Al-Qur'an (TBA). Program ini
+                  diselenggarakan untuk membantu mahasiswa meningkatkan kemampuan membaca Al-Qur'an. Proses Bimbingan Baca Al-Qur'an (BIBAQ) dilaksanakan 12 sesi pertemuan.
+                </p>
+              </div>
+
+              <!-- SYARAT DAN KETENTUAN -->
+              <div>
+                <h5 class="fs-5 fw-semibold text-black mb-2"><i class="bi bi-list-check me-2 fs-5"></i>Syarat & Ketentuan</h5>
+                <ul class="syarat-list list-unstyled m-0 p-0">
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black"><i class="bi bi-check-circle-fill me-2 fs-6"></i>Mahasiswa yang belum lulus Tes Baca Al Quran</li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black"><i class="bi bi-check-circle-fill me-2 fs-6"></i>Niat dan Serius untuk belajar baca Al Quran</li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i>Mengikuti bimbingan yang dilaksanakan sebanyak 12 kali pertemuan
+                  </li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black"><i class="bi bi-check-circle-fill me-2 fs-6"></i>Konsisten dengan waktu bimbingan (tidak boleh izin)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PENDAFTARAN -->
+          <div class="tab-pane fade" id="pendaftaran" role="tabpanel" aria-labelledby="pendaftaran-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-pencil-square text-black me-2 fs-4"></i>Pendaftaran Program BIBAQ</h4>
+
+              <!-- TOMBOL PENDAFTARAN -->
+              <div id="bibaqRegistrationButtonArea" class="text-start mb-2">
+                <button id="btnDaftarBIBAQ" class="btn btn-primary fs-6 fw-normal px-3 py-2">Daftar BIBAQ</button>
+              </div>
+
+              <!-- AREA STATUS PENDAFTARAN -->
+              <div id="bibaqRegistrationStatusArea" class="rounded-4">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+
+              <!-- FORM PENDAFTARAN -->
+              <div id="formBIBAQPendaftaranArea" style="display: none" class="mb-4">
+                <form id="formBIBAQPendaftaran">
+                  <div class="row">
+                    <!-- INPUT NAMA LENGKAP -->
+                    <div class="col-md-6 mb-3">
+                      <label for="bibaq_namaLengkap" class="form-label fs-6 fw-medium">Nama Lengkap <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="bibaq_namaLengkap" placeholder="Masukkan nama lengkap" required />
+                    </div>
+                    <!-- INPUT NIM -->
+                    <div class="col-md-6 mb-3">
+                      <label for="bibaq_nim" class="form-label fs-6 fw-medium">NIM <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="bibaq_nim" placeholder="Masukkan NIM" required />
+                    </div>
+                    <!-- INPUT JENIS KELAMIN -->
+                    <div class="col-md-6 mb-3">
+                      <label for="bibaq_jenisKelamin" class="form-label fs-6 fw-medium">Jenis Kelamin <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <select class="form-select rounded-4 py-2 px-3" id="bibaq_jenisKelamin" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                    <!-- INPUT FAKULTAS -->
+                    <div class="col-md-6 mb-3">
+                      <label for="bibaq_fakultas" class="form-label fs-6 fw-medium">Fakultas <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="bibaq_fakultas" placeholder="Masukkan fakultas" required />
+                    </div>
+                    <!-- INPUT PRODI -->
+                    <div class="col-md-6 mb-3">
+                      <label for="bibaq_prodi" class="form-label fs-6 fw-medium">Program Studi <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="bibaq_prodi" placeholder="Masukkan program studi" required />
+                    </div>
+                    <!-- INPUT KONTAK -->
+                    <div class="col-md-6 mb-3">
+                      <label for="bibaq_kontak" class="form-label fs-6 fw-medium">Kontak <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="bibaq_kontak" placeholder="Contoh: 08123456789" required />
+                    </div>
+                    <!-- INPUT PERNYATAAN -->
+                    <div class="col-12 mb-3">
+                      <label class="form-label fs-6 fw-medium">Pernyataan <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="bibaq_pernyataan" id="bibaq_pernyataan_ya" value="Ya" required />
+                        <label class="form-check-label" for="bibaq_pernyataan_ya"> Ya </label>
+                      </div>
+                      <small class="text-muted d-block mt-2"><strong>Pernyataan:</strong> SAYA BERJANJI AKAN BERSUNGGUH SUNGGUH MENGIKUTI BIMBINGAN BACA AL QURAN YANG DILAKSANAKAN LPPI</small>
+                    </div>
+                  </div>
+                  <!-- INPUT SUBMIT DAN BATAL -->
+                  <div class="d-flex justify-content-between">
+                    <button type="button" id="btnBatalBIBAQ" class="btn btn-secondary me-2"><i class="bi bi-x-circle me-2"></i>Batal</button>
+                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-2"></i>Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PEMBIMBING DAN KELOMPOK -->
+          <div class="tab-pane fade" id="pembimbing-kelompok" role="tabpanel" aria-labelledby="pembimbing-kelompok-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-people-fill text-black me-2 fs-4"></i>Pembimbing & Kelompok BIBAQ</h4>
+
+              <div id="pembimbingKelompokContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PRESENSI -->
+          <div class="tab-pane fade" id="presensi" role="tabpanel" aria-labelledby="presensi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-calendar-check-fill text-black me-2 fs-4"></i>Rekap Presensi BIBAQ</h4>
+
+              <div id="presensiContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB HASIL -->
+          <div class="tab-pane fade" id="memo-bibaq" role="tabpanel" aria-labelledby="memo-bibaq-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-file-earmark-text-fill text-success text-black me-2 fs-4"></i>Memo Program BIBAQ</h4>
+
+              <div id="memoBIBAQContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

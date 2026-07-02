@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentee - SIM LPPI UMP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/mentee.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="top-header d-flex align-items-center fixed-top bg-white">
+      <div class="d-flex align-items-center justify-content-between w-100 mx-4">
+        <div class="d-flex align-items-center gap-2">
+          <button class="mobile-menu-btn d-flex d-md-none align-items-center justify-content-center border border-0 rounded-4" id="mobileMenuBtn">
+            <i class="bi bi-list fs-4 text-white"></i>
+          </button>
+          <h2 class="header-title fs-2 fw-bold text-black m-0">SIM LPPI</h2>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <h3 class="d-none d-md-inline fs-3 fw-medium text-black m-0">Universitas Muhammadiyah Purwokerto</h3>
+          <img src="/assets/img/LogoUMPnonbg.png" alt="Logo" class="header-logo" />
+        </div>
+      </div>
+    </header>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="toggle-btn" id="toggleBtn">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+
+      <div class="sidebar-content">
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="user-name">Rizki Abdilah Supriadi</div>
+          <div class="user-id">2003040065</div>
+        </div>
+
+        <!-- MIDDLE MENU SIDEBAR -->
+        <nav class="sidebar-menu">
+          <!-- SIDEBAR DASHBOARD -->
+          <a href="dashboard.html" class="menu-item">
+            <i class="bi bi-grid-fill"></i>
+            <span class="menu-text">Dashboard</span>
+            <span class="menu-tooltip">Dashboard</span>
+          </a>
+
+          <!-- SIDEBAR MENTORING WITH DROPDOWN -->
+          <div class="menu-group">
+            <a href="#" class="menu-item active" id="mentoringMenu">
+              <i class="bi bi-people-fill"></i>
+              <span class="menu-text">Mentoring</span>
+              <span class="menu-tooltip">Mentoring</span>
+              <i class="bi bi-chevron-down menu-arrow"></i>
+            </a>
+            <div class="submenu show" id="mentoringSubmenu">
+              <a href="mentor.html" class="submenu-item">
+                <i class="bi bi-person-video2"></i>
+                <span>Mentor</span>
+                <span class="menu-tooltip">Mentor</span>
+              </a>
+              <a href="mentee.html" class="submenu-item active">
+                <i class="bi bi-person-badge"></i>
+                <span>Mentee</span>
+                <span class="menu-tooltip">Mentee</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- SIDEBAR TBA -->
+          <a href="tba.html" class="menu-item">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <span class="menu-text">TBA</span>
+            <span class="menu-tooltip">TBA</span>
+          </a>
+
+          <!-- SIDEBAR BIBAQ -->
+          <a href="bibaq.html" class="menu-item">
+            <i class="bi bi-chat-square-dots-fill"></i>
+            <span class="menu-text">BIBAQ</span>
+            <span class="menu-tooltip">BIBAQ</span>
+          </a>
+
+          <!-- SIDEBAR SELEKSI BERPRESTASI -->
+          <a href="seleksiberprestasi.html" class="menu-item">
+            <i class="bi bi-trophy-fill"></i>
+            <span class="menu-text">Seleksi Berprestasi</span>
+            <span class="menu-tooltip">Seleksi Berprestasi</span>
+          </a>
+        </nav>
+
+        <!-- BOTTOM MENU SIDEBAR -->
+        <div class="bottom-menu">
+          <!-- SIDEBAR PROFIL -->
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span class="menu-text">Profil</span>
+            <span class="menu-tooltip">Profil</span>
+          </a>
+
+          <!-- SIDEBAR LOGOUT -->
+          <a href="#" class="menu-item">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="menu-text">Logout</span>
+            <span class="menu-tooltip">Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content p-4" id="mainContent">
+      <!-- BREADCRUMB -->
+      <nav aria-label="breadcrumb" class="bg-white px-3 py-2 mb-4 rounded-4 shadow-sm">
+        <ol class="breadcrumb m-auto">
+          <li class="breadcrumb-item"><a href="dashboard.html" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-6">Dashboard</a></li>
+          <li class="breadcrumb-item fs-6 text-black">Mentoring</li>
+          <li class="breadcrumb-item fs-6 text-black" aria-current="page">Mentee</li>
+        </ol>
+      </nav>
+
+      <!-- PAGE HEADER -->
+      <div class="bg-white rounded-4 mb-4 p-4 shadow-sm">
+        <h3 class="fs-3 m-auto fw-semibold text-black"><i class="bi bi-person-badge fs-2 text-black text-center me-2"></i>Program Mentoring - Mentee</h3>
+      </div>
+
+      <!-- TAB NAVIGATION -->
+      <div class="shadow-sm rounded-4 bg-white overflow-hidden">
+        <!-- TAB NAVIGATION ITEM -->
+        <ul class="nav nav-tabs mentee-tabs d-flex flex-wrap" id="menteeTabs" role="tablist">
+          <!-- TAB INFORMASI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link active rounded-top-4 py-2 px-3"
+              id="informasi-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#informasi"
+              type="button"
+              role="tab"
+              aria-controls="informasi"
+              aria-selected="true">
+              <i class="bi bi-info-circle me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Informasi</span>
+            </button>
+          </li>
+
+          <!-- TAB PENDAFTARAN -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="pendaftaran-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#pendaftaran"
+              type="button"
+              role="tab"
+              aria-controls="pendaftaran"
+              aria-selected="false">
+              <i class="bi bi-pencil-square me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Pendaftaran</span>
+            </button>
+          </li>
+
+          <!-- TAB KELOMPOK -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="mentor-kelompok-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#mentor-kelompok"
+              type="button"
+              role="tab"
+              aria-controls="mentor-kelompok"
+              aria-selected="false">
+              <i class="bi bi-people me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Kelompok</span>
+            </button>
+          </li>
+
+          <!-- TAB PRESENSI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button class="nav-link rounded-top-4 py-2 px-3" id="presensi-tab" data-bs-toggle="tab" data-bs-target="#presensi" type="button" role="tab" aria-controls="presensi" aria-selected="false">
+              <i class="bi bi-calendar-check me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Presensi</span>
+            </button>
+          </li>
+
+          <!-- TAB MATERI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="materi-tugas-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#materi-tugas"
+              type="button"
+              role="tab"
+              aria-controls="materi-tugas"
+              aria-selected="false">
+              <i class="bi bi-journal-text me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Materi</span>
+            </button>
+          </li>
+
+          <!-- TAB HASIL -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="sertifikat-mentee-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#sertifikat-mentee"
+              type="button"
+              role="tab"
+              aria-controls="sertifikat-mentee"
+              aria-selected="false">
+              <i class="bi bi-award me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Sertifikat</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- TAB NAVIGATION CONTENT -->
+        <div class="tab-content mentee-tab-content p-0" id="menteeTabContent">
+          <!-- TAB INFORMASI -->
+          <div class="tab-pane fade show active" id="informasi" role="tabpanel" aria-labelledby="informasi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-info-circle-fill text-black fs-4 me-2"></i>Informasi Program Mentoring</h4>
+              <!-- TENTANG MENTORING -->
+              <div class="info-section p-3 mb-3 rounded-4">
+                <h5 class="fs-5 fw-semibold mb-2"><i class="bi bi-bookmark-fill me-2 fs-5"></i>Tentang Program Mentoring</h5>
+                <p class="m-0 fs-6 fw-normal text-black">
+                  Program Mentoring Kemuhammadiyahan merupakan kegiatan wajib yang diikuti oleh mahasiswa. Kegiatan ini bertujuan memberikan pemahaman yang komprehensif mengenai nilai-nilai keislaman
+                  dan Kemuhammadiyahan kepada seluruh mahasiswa Universitas Muhammadiyah Purwokerto.
+                </p>
+              </div>
+
+              <!-- INFORMASI LAIN MENTORING -->
+              <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                  <div class="info-card p-3 rounded-4">
+                    <h5 class="text-success fs-5 fw-semibold mb-2"><i class="bi bi-calendar-event me-2 fs-5"></i>Durasi Program</h5>
+                    <p class="m-0 fs-6 fw-normal text-black">2 Semester (1 Tahun Akademik)</p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="info-card p-3 rounded-4">
+                    <h5 class="text-primary fs-5 fw-semibold mb-2"><i class="bi bi-clock me-2 fs-5"></i>Frekuensi Pertemuan</h5>
+                    <p class="m-0 fs-6 fw-normal text-black">1 kali per minggu (48 pertemuan total)</p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <div class="info-card p-3 rounded-4">
+                    <h5 class="text-warning fs-5 fw-semibold mb-2"><i class="bi bi-people me-2 fs-5"></i>Jumlah Mentee per Kelompok</h5>
+                    <p class="m-0 fs-6 fw-normal text-black">12 mahasiswa per kelompok</p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-0">
+                  <div class="info-card p-3 rounded-4">
+                    <h5 class="text-danger fs-5 fw-semibold mb-2"><i class="bi bi-award me-2 fs-5"></i>Sertifikat</h5>
+                    <p class="m-0 fs-6 fw-normal text-black">Diberikan setelah dinyatakan lulus (syarat mata kuliah kemuhammadiyahan)</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CATATAN PENTING -->
+              <div class="alert alert-info note-card rounded-4 p-3 border-0 m-0">
+                <h5 class="fs-5 text-black fw-semibold mb-2"><i class="bi bi-lightbulb-fill me-2 fs-5"></i>Catatan Penting</h5>
+                <ul class="fs-6 text-black fw-normal mb-0">
+                  <li>Mahasiswa baru secara otomatis terdaftar sebagai mentee dalam Program Mentoring Kemuhammadiyahan</li>
+                  <li>Mahasiswa yang belum dinyatakan lulus wajib mengikuti kembali program pada tahun berikutnya</li>
+                  <li>Tingkat kehadiran dan partisipasi aktif menjadi faktor penting dalam penentuan kelulusan</li>
+                  <li>Sertifikat kelulusan menjadi persyaratan untuk mengambil mata kuliah Kemuhammadiyahan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PENDAFTARAN -->
+          <div class="tab-pane fade" id="pendaftaran" role="tabpanel" aria-labelledby="pendaftaran-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-pencil-square text-black me-2 fs-4"></i>Pendaftaran Program Mentoring</h4>
+
+              <!-- TOMBOL PENDAFTARAN -->
+              <div id="registrationButtonArea" class="text-start mb-2">
+                <button id="btnDaftar" class="btn btn-primary fs-6 fw-normal px-3 py-2">Daftar Mentee</button>
+              </div>
+
+              <!-- AREA STATUS PENDAFTARAN -->
+              <div id="registrationStatusArea" class="rounded-4">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+
+              <!-- FORMULIR PENDAFTARAN -->
+              <div id="formPendaftaranArea" style="display: none" class="mb-4">
+                <form id="formPendaftaran">
+                  <div class="row">
+                    <!-- INPUT NAMA LENGKAP -->
+                    <div class="col-md-6 mb-3">
+                      <label for="namaLengkap" class="form-label fs-6 fw-medium">Nama Lengkap <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="namaLengkap" placeholder="Masukkan nama lengkap" required />
+                    </div>
+                    <!-- INPUT NIM -->
+                    <div class="col-md-6 mb-3">
+                      <label for="nimPendaftaran" class="form-label fs-6 fw-medium">NIM <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="nimPendaftaran" placeholder="Masukkan NIM" required />
+                    </div>
+                    <!-- INPUT JENIS KELAMIN -->
+                    <div class="col-md-6 mb-3">
+                      <label for="jenisKelamin" class="form-label fs-6 fw-medium">Jenis Kelamin <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <select class="form-select rounded-4 py-2 px-3" id="jenisKelamin" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                    <!-- INPUT FAKULTAS -->
+                    <div class="col-md-6 mb-3">
+                      <label for="fakultas" class="form-label fs-6 fw-medium">Fakultas <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="fakultas" placeholder="Masukkan fakultas" required />
+                    </div>
+                    <!-- INPUT PRODI -->
+                    <div class="col-md-6 mb-3">
+                      <label for="prodi" class="form-label fs-6 fw-medium">Program Studi <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="prodi" placeholder="Masukkan program studi" required />
+                    </div>
+                    <!-- INPUT ANGKATAN -->
+                    <div class="col-md-6 mb-3">
+                      <label for="angkatan" class="form-label fs-6 fw-medium">Angkatan <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="angkatan" placeholder="Contoh: 2020" required />
+                    </div>
+                    <!-- INPUT KONTAK -->
+                    <div class="col-md-12 mb-3">
+                      <label for="kontak" class="form-label fs-6 fw-medium">Kontak <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="kontak" placeholder="Contoh: 08123456789" required />
+                    </div>
+                  </div>
+                  <!-- BUTTON SUBMIT DAN BATAL -->
+                  <div class="d-flex justify-content-between">
+                    <button type="button" id="btnBatal" class="btn btn-secondary me-2"><i class="bi bi-x-circle me-2"></i>Batal</button>
+                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-2"></i>Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB MENTOR DAN KELOMPOK -->
+          <div class="tab-pane fade" id="mentor-kelompok" role="tabpanel" aria-labelledby="mentor-kelompok-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-people-fill text-black me-2 fs-4"></i>Mentor & Kelompok</h4>
+
+              <div id="mentorKelompokContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PRESENSI -->
+          <div class="tab-pane fade" id="presensi" role="tabpanel" aria-labelledby="presensi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-calendar-check-fill text-black me-2 fs-4"></i>Rekap Presensi</h4>
+
+              <div id="presensiContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab MATERI DAN TUGAS -->
+          <div class="tab-pane fade" id="materi-tugas" role="tabpanel" aria-labelledby="materi-tugas-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-journal-text text-black me-2 fs-4"></i>Materi & Tugas</h4>
+
+              <div id="materiTugasContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB HASIL -->
+          <div class="tab-pane fade" id="sertifikat-mentee" role="tabpanel" aria-labelledby="sertifikat-mentee-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-award-fill text-black me-2 fs-4"></i>Sertifikat Program Mentoring</h4>
+
+              <div id="sertifikatMenteeContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

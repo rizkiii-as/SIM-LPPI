@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TBA - SIM LPPI UMP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/tba.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="top-header d-flex align-items-center fixed-top bg-white">
+      <div class="d-flex align-items-center justify-content-between w-100 mx-4">
+        <div class="d-flex align-items-center gap-2">
+          <button class="mobile-menu-btn d-flex d-md-none align-items-center justify-content-center border border-0 rounded-4" id="mobileMenuBtn">
+            <i class="bi bi-list fs-4 text-white"></i>
+          </button>
+          <h2 class="header-title fs-2 fw-bold text-black m-0">SIM LPPI</h2>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <h3 class="d-none d-md-inline fs-3 fw-medium text-black m-0">Universitas Muhammadiyah Purwokerto</h3>
+          <img src="/assets/img/LogoUMPnonbg.png" alt="Logo" class="header-logo" />
+        </div>
+      </div>
+    </header>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="toggle-btn" id="toggleBtn">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+
+      <div class="sidebar-content">
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="user-name">Rizki Abdilah Supriadi</div>
+          <div class="user-id">2003040065</div>
+        </div>
+
+        <!-- Menu -->
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item">
+            <i class="bi bi-grid-fill"></i>
+            <span class="menu-text">Dashboard</span>
+            <span class="menu-tooltip">Dashboard</span>
+          </a>
+
+          <!-- Mentoring with Dropdown -->
+          <div class="menu-group">
+            <a href="#" class="menu-item active" id="mentoringMenu">
+              <i class="bi bi-people-fill"></i>
+              <span class="menu-text">Mentoring</span>
+              <span class="menu-tooltip">Mentoring</span>
+              <i class="bi bi-chevron-down menu-arrow"></i>
+            </a>
+            <div class="submenu" id="mentoringSubmenu">
+              <a href="mentor.html" class="submenu-item">
+                <i class="bi bi-person-video2"></i>
+                <span>Mentor</span>
+                <span class="menu-tooltip">Mentor</span>
+              </a>
+              <a href="mentee.html" class="submenu-item active">
+                <i class="bi bi-person-badge"></i>
+                <span>Mentee</span>
+                <span class="menu-tooltip">Mentee</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="tba.html" class="menu-item">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <span class="menu-text">TBA</span>
+            <span class="menu-tooltip">TBA</span>
+          </a>
+          <a href="bibaq.html" class="menu-item">
+            <i class="bi bi-chat-square-dots-fill"></i>
+            <span class="menu-text">BIBAQ</span>
+            <span class="menu-tooltip">BIBAQ</span>
+          </a>
+          <a href="seleksiberprestasi.html" class="menu-item">
+            <i class="bi bi-trophy-fill"></i>
+            <span class="menu-text">Seleksi Berprestasi</span>
+            <span class="menu-tooltip">Seleksi Berprestasi</span>
+          </a>
+        </nav>
+
+        <!-- Bottom Menu -->
+        <div class="bottom-menu">
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span class="menu-text">Profil</span>
+            <span class="menu-tooltip">Profil</span>
+          </a>
+          <a href="#" class="menu-item">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="menu-text">Logout</span>
+            <span class="menu-tooltip">Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="mainContent">
+      <!-- BREADCRUMB -->
+      <nav aria-label="breadcrumb" class="bg-white px-3 py-2 mb-4 rounded-4 shadow-sm">
+        <ol class="breadcrumb m-auto">
+          <li class="breadcrumb-item"><a href="dashboard.html" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-6">Dashboard</a></li>
+          <li class="breadcrumb-item fs-6 text-black" aria-current="page">TBA</li>
+        </ol>
+      </nav>
+
+      <!-- PAGE HEADER -->
+      <div class="bg-white rounded-4 mb-4 p-4 shadow-sm">
+        <h3 class="fs-3 m-auto fw-semibold text-black"><i class="bi bi-file-earmark-text-fill fs-2 text-black text-center me-2"></i>Program Tes Baca Al-Quran (TBA)</h3>
+      </div>
+
+      <!-- TAB NAVIGATION -->
+      <div class="shadow-sm rounded-4 bg-white overflow-hidden">
+        <!-- TAB NAVIGATION ITEM -->
+        <ul class="nav nav-tabs tba-tabs d-flex flex-wrap" id="tbaTabs" role="tablist">
+          <!-- TAB INFORMASI -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link active rounded-top-4 py-2 px-3"
+              id="informasi-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#informasi"
+              type="button"
+              role="tab"
+              aria-controls="informasi"
+              aria-selected="true">
+              <i class="bi bi-info-circle me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Informasi</span>
+            </button>
+          </li>
+
+          <!-- TAB PENDAFTARAN -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="pendaftaran-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#pendaftaran"
+              type="button"
+              role="tab"
+              aria-controls="pendaftaran"
+              aria-selected="false">
+              <i class="bi bi-pencil-square me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Pendaftaran</span>
+            </button>
+          </li>
+
+          <!-- TAB PENGUJI DAN JADWAL -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="penguji-jadwal-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#penguji-jadwal"
+              type="button"
+              role="tab"
+              aria-controls="penguji-jadwal"
+              aria-selected="false">
+              <i class="bi bi-calendar-event me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Penguji & Jadwal</span>
+            </button>
+          </li>
+
+          <!-- TAB HASIL -->
+          <li class="nav-item rounded-top-4" role="presentation">
+            <button
+              class="nav-link rounded-top-4 py-2 px-3"
+              id="sertifikat-tba-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#sertifikat-tba"
+              type="button"
+              role="tab"
+              aria-controls="sertifikat-tba"
+              aria-selected="false">
+              <i class="bi bi-award me-0 me-sm-2 fs-4"></i><span class="d-none d-sm-inline fs-6">Sertifikat</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- TAB NAVIGATION CONTENT -->
+        <div class="tab-content tba-tab-content p-0" id="tbaTabContent">
+          <!-- TAB INFORMASI -->
+          <div class="tab-pane fade show active" id="informasi" role="tabpanel" aria-labelledby="informasi-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-info-circle-fill text-black fs-4 me-2"></i>Informasi Program TBA</h4>
+              <!-- TENTANG TBA -->
+              <div class="info-section p-3 mb-4 rounded-4">
+                <h5 class="fs-5 fw-semibold mb-2"><i class="bi bi-bookmark-fill me-2 fs-5"></i>Tentang Program TBA</h5>
+                <p class="m-0 fs-6 fw-normal text-black">
+                  Program Tes Baca Al-Qur'an (TBA) merupakan program wajib bagi mahasiswa. Program ini diselenggarakan untuk menilai tingkat kemampuan mahasiswa dalam membaca Al-Qur'an.
+                </p>
+              </div>
+
+              <!-- KRITERIA PENILAIAN -->
+              <h5 class="fs-5 fw-semibold text-black mb-2"><i class="bi bi-clipboard-check me-2 fs-5"></i>Kriteria Penilaian TBA</h5>
+              <div class="row">
+                <!-- LULUS NILAI A -->
+                <div class="col-md-6 mb-3">
+                  <div class="penilaian-card lulus p-3 rounded-4">
+                    <h6 class="text-success fs-6 fw-semibold mb-2"><i class="bi bi-check-circle-fill me-2 fs-6"></i>Lulus dengan Nilai A (L/A)</h6>
+                    <p class="m-0 fs-6 fw-normal text-black">Mampu membaca dengan Lancar, Baik, dan Benar:</p>
+                    <ul>
+                      <li>Fawatihus suwar</li>
+                      <li>Makhraj huruf</li>
+                      <li>Hukum Bacaan</li>
+                      <li>Panjang Pendek</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- LULUS NILAI B -->
+                <div class="col-md-6 mb-3">
+                  <div class="penilaian-card lulus p-3 rounded-4">
+                    <h6 class="text-success fs-6 fw-semibold mb-2"><i class="bi bi-check-circle-fill me-2 fs-6"></i>Lulus dengan Nilai B (L/B)</h6>
+                    <p class="m-0 fs-6 fw-normal text-black">Mampu membaca dengan Lancar dan Benar:</p>
+                    <ul>
+                      <li>Panjang pendek</li>
+                      <li>Makhraj huruf</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TIDAK LULUS -->
+              <div class="penilaian-card tidak-lulus p-3 rounded-4 mb-4">
+                <h6 class="text-danger fs-6 fw-semibold mb-2"><i class="bi bi-x-circle-fill me-2 fs-6"></i>Tidak Lulus</h6>
+                <p class="m-0 fs-6 fw-normal text-black">Tidak mampu membaca Al-Quran dengan Lancar, Baik, dan Benar:</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul>
+                      <li><strong>TL/1:</strong> Sama sekali tidak bisa membaca</li>
+                      <li><strong>TL/2:</strong> Tidak mengenal huruf dengan baik</li>
+                      <li><strong>TL/3:</strong> Panjang pendek dan harokat</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul>
+                      <li><strong>TL/4:</strong> Waqaf (Berhenti & Mulai)</li>
+                      <li><strong>TL/5:</strong> Kurang lancar dan tidak benar</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SYARAT DAN KETENTUAN -->
+              <div>
+                <h5 class="fs-5 fw-semibold text-black mb-2"><i class="bi bi-list-check me-2 fs-5"></i>Syarat & Ketentuan Pendaftaran Ulang</h5>
+                <ul class="syarat-list list-unstyled m-0 p-0">
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i>Mahasiswa yang dinyatakan tidak lulus TBA periode sebelumnya
+                  </li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black">
+                    <i class="bi bi-check-circle-fill me-2 fs-6"></i>Membawa Memo BIBAQ yang dikeluarkan oleh pembimbing BIBAQ
+                  </li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black"><i class="bi bi-check-circle-fill me-2 fs-6"></i>Membawa KTM (Kartu Tanda Mahasiswa)</li>
+                  <li class="d-flex align-items-center py-2 px-3 rounded-4 mb-2 text-black"><i class="bi bi-check-circle-fill me-2 fs-6"></i>Niat dan Serius untuk Tes Baca Al-Quran</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PENDAFTARAN -->
+          <div class="tab-pane fade" id="pendaftaran" role="tabpanel" aria-labelledby="pendaftaran-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-pencil-square text-black me-2 fs-4"></i>Pendaftaran Program TBA</h4>
+              <!-- TOMBOL PENDAFTARAN -->
+              <div id="tbaRegistrationButtonArea" class="text-start mb-2">
+                <button id="btnDaftarTBA" class="btn btn-primary fs-6 fw-normal px-3 py-2">Daftar TBA</button>
+              </div>
+
+              <!-- AREA STATUS PENDAFTARAN -->
+              <div id="tbaRegistrationStatusArea" class="rounded-4">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+
+              <!-- FORM PENDAFTARAN -->
+              <div id="formTBAPendaftaranArea" style="display: none" class="mb-4">
+                <form id="formTBAPendaftaran">
+                  <div class="row">
+                    <!-- INPUT NAMA LENGKAP -->
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_namaLengkap" class="form-label fs-6 fw-medium">Nama Lengkap <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="tba_namaLengkap" placeholder="Masukkan nama lengkap" required />
+                    </div>
+                    <!-- INPUT NIM -->
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_nim" class="form-label fs-6 fw-medium">NIM <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="tba_nim" placeholder="Masukkan NIM" required />
+                    </div>
+                    <!-- INPUT JENIS KELAMIN -->
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_jenisKelamin" class="form-label fs-6 fw-medium">Jenis Kelamin <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <select class="form-select rounded-4 py-2 px-3" id="tba_jenisKelamin" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                    <!-- INPUT FAKULTAS -->
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_fakultas" class="form-label fs-6 fw-medium">Fakultas <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="tba_fakultas" placeholder="Masukkan fakultas" required />
+                    </div>
+                    <!-- INPUT PRODI -->
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_prodi" class="form-label fs-6 fw-medium">Program Studi <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="tba_prodi" placeholder="Masukkan program studi" required />
+                    </div>
+                    <!-- INPUT ANGKATAN -->
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_angkatan" class="form-label fs-6 fw-medium">Angkatan <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="tba_angkatan" placeholder="Contoh: 2020" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_kontak" class="form-label fs-6 fw-medium">Kontak <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="text" class="form-control rounded-4 py-2 px-3" id="tba_kontak" placeholder="Contoh: 08123456789" required />
+                    </div>
+                    <!-- INPUT MEMO BIBAQ -->
+                    <div class="col-md-6 mb-3">
+                      <label for="tba_memoBIBAQ" class="form-label">Upload Memo BIBAQ <span class="text-danger fs-6 fw-medium">*</span></label>
+                      <input type="file" class="form-control rounded-4 py-2 px-3" id="tba_memoBIBAQ" accept=".pdf" required />
+                      <small class="text-muted">Format yang diizinkan: PDF</small>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-between">
+                    <button type="button" id="btnBatalTBA" class="btn btn-secondary me-2"><i class="bi bi-x-circle me-2"></i>Batal</button>
+                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-2"></i>Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB PENGUJI DAN JADWAL -->
+          <div class="tab-pane fade" id="penguji-jadwal" role="tabpanel" aria-labelledby="penguji-jadwal-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-calendar-event-fill text-black me-2 fs-4"></i>Penguji & Jadwal TBA</h4>
+
+              <div id="pengujiJadwalContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB HASIL -->
+          <div class="tab-pane fade" id="sertifikat-tba" role="tabpanel" aria-labelledby="sertifikat-tba-tab">
+            <div class="p-4">
+              <h4 class="fs-4 mb-4 text-black fw-bold"><i class="bi bi-award-fill text-black me-2 fs-4"></i>Sertifikat Program TBA</h4>
+
+              <div id="sertifikatTBAContent">
+                <!-- Akan diisi oleh JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

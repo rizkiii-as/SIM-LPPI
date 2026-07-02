@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SIM LPPI UMP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/dashboard.css" />
+  </head>
+  <body>
+    <!-- ==================== HEADER ==================== -->
+    <header class="top-header d-flex align-items-center fixed-top bg-white">
+      <div class="d-flex align-items-center justify-content-between w-100 mx-4">
+        <div class="d-flex align-items-center gap-2">
+          <button class="mobile-menu-btn d-flex d-md-none align-items-center justify-content-center border border-0 rounded-4" id="mobileMenuBtn" aria-label="Buka menu">
+            <i class="bi bi-list fs-4 text-white"></i>
+          </button>
+          <h2 class="header-title fs-2 fw-bold text-black m-0">SIM LPPI</h2>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <h3 class="d-none d-md-inline fs-3 fw-medium text-black m-0">Universitas Muhammadiyah Purwokerto</h3>
+          <img src="/assets/img/LogoUMPnonbg.png" alt="Logo UMP" class="header-logo" />
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== SIDEBAR OVERLAY ==================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="toggle-btn" id="toggleBtn">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+
+      <div class="sidebar-content">
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="user-name">Rizki Abdilah Supriadi</div>
+          <div class="user-id">2003040065</div>
+        </div>
+
+        <!-- Menu Utama -->
+        <nav class="sidebar-menu">
+          <!-- Dashboard -->
+          <a href="dashboard.html" class="menu-item active">
+            <i class="bi bi-grid-fill"></i>
+            <span class="menu-text">Dashboard</span>
+            <span class="menu-tooltip">Dashboard</span>
+          </a>
+
+          <!-- Mentoring dengan Dropdown -->
+          <div class="menu-group">
+            <a href="#" class="menu-item" id="mentoringMenu">
+              <i class="bi bi-people-fill"></i>
+              <span class="menu-text">Mentoring</span>
+              <span class="menu-tooltip">Mentoring</span>
+              <i class="bi bi-chevron-down menu-arrow"></i>
+            </a>
+            <div class="submenu" id="mentoringSubmenu">
+              <a href="mentor.html" class="submenu-item">
+                <i class="bi bi-person-video2"></i>
+                <span>Mentor</span>
+                <span class="menu-tooltip">Mentor</span>
+              </a>
+              <a href="mentee.html" class="submenu-item">
+                <i class="bi bi-person-badge"></i>
+                <span>Mentee</span>
+                <span class="menu-tooltip">Mentee</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- TBA -->
+          <a href="tba.html" class="menu-item">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <span class="menu-text">TBA</span>
+            <span class="menu-tooltip">TBA</span>
+          </a>
+
+          <!-- BIBAQ -->
+          <a href="bibaq.html" class="menu-item">
+            <i class="bi bi-chat-square-dots-fill"></i>
+            <span class="menu-text">BIBAQ</span>
+            <span class="menu-tooltip">BIBAQ</span>
+          </a>
+
+          <!-- Seleksi Berprestasi -->
+          <a href="seleksiberprestasi.html" class="menu-item">
+            <i class="bi bi-trophy-fill"></i>
+            <span class="menu-text">Seleksi Berprestasi</span>
+            <span class="menu-tooltip">Seleksi Berprestasi</span>
+          </a>
+        </nav>
+
+        <!-- Menu Bawah -->
+        <div class="bottom-menu">
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span class="menu-text">Profil</span>
+            <span class="menu-tooltip">Profil</span>
+          </a>
+          <a href="#" class="menu-item">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="menu-text">Logout</span>
+            <span class="menu-tooltip">Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content p-4" id="mainContent">
+      <!-- BREADCRUMB -->
+      <nav aria-label="breadcrumb" class="bg-white px-3 py-2 mb-4 rounded-4 shadow-sm">
+        <ol class="breadcrumb m-auto">
+          <li class="breadcrumb-item text-black fs-6" aria-current="page">Dashboard</li>
+        </ol>
+      </nav>
+
+      <!-- WELCOME BANNER -->
+      <div class="welcome-banner rounded-4 p-4 mb-4" id="welcomeBanner">
+        <!-- Diisi oleh dashboard.js / renderWelcomeBanner() -->
+      </div>
+
+      <!-- Status Program: Mentee, Mentor, TBA, BIBAQ, Seleksi Berprestasi -->
+      <div class="dashboard-section-card bg-white rounded-4 mb-4 p-4">
+        <div class="section-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+          <h5 class="section-title mb-1 fs-5 fw-bold text-black"><i class="bi bi-clipboard-data text-primary me-2"></i>Status Program</h5>
+        </div>
+        <div class="row row-cols-md-3 row-cols-xl-5 g-2" id="statusProgramRow">
+          <!-- Diisi oleh dashboard.js / renderStatusProgram() -->
+        </div>
+      </div>
+
+      <!-- Baris Konten Utama -->
+      <div class="row g-3">
+        <!-- Kolom Kiri: Progress, Pertemuan, Tugas -->
+        <div class="col-lg-8">
+          <!-- PROGRES KEHADIRAN -->
+          <div class="dashboard-section-card bg-white rounded-4 mb-4 p-4 mb-3">
+            <div class="section-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+              <h5 class="section-title mb-1 fs-5 fw-bold text-black"><i class="bi bi-graph-up text-success me-2"></i>Progress Kehadiran</h5>
+            </div>
+            <div id="progressKehadiran">
+              <!-- Diisi oleh dashboard.js / renderProgressKehadiran() -->
+            </div>
+          </div>
+
+          <!-- PERTEMUAN MENTORING -->
+          <div class="dashboard-section-card bg-white rounded-4 mb-4 p-4">
+            <div class="section-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+              <div>
+                <h5 class="section-title mb-1 fs-5 fw-bold text-black"><i class="bi bi-calendar-event text-primary me-2"></i>Pertemuan Berikutnya</h5>
+                <p class="section-subtitle fs-6 mb-0">Jadwal mentoring yang akan datang</p>
+              </div>
+              <a href="mentee.html" class="btn btn-sm btn-outline-primary rounded-pill px-3"> Lihat Semua </a>
+            </div>
+            <div id="upcomingMeetings">
+              <!-- Diisi oleh dashboard.js / renderUpcomingMeetings() -->
+            </div>
+          </div>
+
+          <!-- TUGAS -->
+          <div class="dashboard-section-card bg-white rounded-4 p-4">
+            <div class="section-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+              <div>
+                <h5 class="section-title mb-1 fs-5 fw-bold text-black"><i class="bi bi-journal-text text-warning me-2"></i>Tugas Belum Dikumpulkan</h5>
+                <p class="section-subtitle fs-6 mb-0">Tugas mentoring yang perlu diselesaikan</p>
+              </div>
+              <a href="mentee.html" class="btn btn-sm btn-outline-warning rounded-pill px-3"> Lihat Semua </a>
+            </div>
+            <div id="pendingTasks">
+              <!-- Diisi oleh dashboard.js / renderPendingTasks() -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Profil Pengguna + Navigasi Cepat -->
+        <div class="col-lg-4">
+          <!-- PROFIL PENGGUNA -->
+          <div class="dashboard-section-card bg-white rounded-4 mb-4 p-4 mb-3">
+            <div class="section-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+              <h5 class="section-title fs-5 fw-bold text-black"><i class="bi bi-person-circle text-primary me-2"></i>Profil Pengguna</h5>
+            </div>
+            <div id="profilRingkas">
+              <!-- Diisi oleh dashboard.js / renderProfilRingkas() -->
+            </div>
+          </div>
+
+          <!-- Navigasi Cepat: Dokumen Sertifikat & Memo -->
+          <div class="dashboard-section-card bg-white rounded-4 mb-4 p-4">
+            <div class="section-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+              <h5 class="section-title mb-1 fs-5 fw-bold text-black"><i class="bi bi-printer text-primary me-2"></i>Cetak &amp; Unduh Sertifikat</h5>
+            </div>
+            <div id="navigasiCepat">
+              <!-- Diisi oleh dashboard.js / renderNavigasiCepat() -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>
