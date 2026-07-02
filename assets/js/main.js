@@ -15,7 +15,7 @@ function initApp() {
   // Cek halaman mana yang sedang aktif
   const currentPage = window.location.pathname;
 
-  if (currentPage.includes("login.html") || currentPage.endsWith("/")) {
+  if (currentPage.includes("index.html") || currentPage.endsWith("/")) {
     // Halaman Login
     initAuth();
   } else if (

@@ -35,7 +35,7 @@ export function checkAuth() {
 
   if (!loggedInUser && window.location.pathname.includes("dashboard.html")) {
     // Jika belum login tapi mencoba akses dashboard, redirect ke login
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return null;
   }
 
@@ -174,7 +174,7 @@ function updateAvatarWithPhoto(user) {
 //FUNGSI LOGOUT
 export function logout() {
   sessionStorage.removeItem("loggedInUser");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 // INISIALISASI BUTTON LOGOUT
